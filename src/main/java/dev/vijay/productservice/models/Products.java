@@ -8,16 +8,19 @@ import lombok.*;
 @NoArgsConstructor
 public class Products {
 
-    private int id;
+    private long id;
 
     private String name;
 
     private String description;
 
-    private int price;
+    private double price;
 
     private String imageUrl;
 
     private Category category;
+
+    private String title;
+
 
 }

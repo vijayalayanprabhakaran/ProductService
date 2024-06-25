@@ -8,7 +8,7 @@ import java.util.List;
 
 public class OwnStoreProductService implements ProductService{
     @Override
-    public Products getSingleProduct(int id) {
+    public Products getSingleProduct(long id) {
         return null;
     }
 
