@@ -6,9 +6,7 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Products {
-
-    private long id;
+public class Products extends BaseModel {
 
     private String name;
 

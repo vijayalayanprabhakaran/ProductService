@@ -8,5 +8,5 @@ public interface ProductService {
 
     Products getSingleProduct(long id);
     List<Products> getAllProducts();
-    Products createProduct(int id , int price , String name, String description,Products products );
+    Products createProduct(String title, int price, String description, String image, String category);
 }

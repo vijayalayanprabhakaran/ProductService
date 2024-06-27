@@ -18,7 +18,9 @@ public class OwnStoreProductService implements ProductService{
     }
 
     @Override
-    public Products createProduct(int id, int price, String name, String description, Products products) {
+    public Products createProduct(String title, int price, String description, String image, String category) {
         return null;
     }
+
+
 }

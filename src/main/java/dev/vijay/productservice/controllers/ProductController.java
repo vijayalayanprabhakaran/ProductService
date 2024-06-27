@@ -1,13 +1,11 @@
 package dev.vijay.productservice.controllers;
 
 
+import dev.vijay.productservice.dtos.RequestBodyProductDto;
 import dev.vijay.productservice.models.Products;
 import dev.vijay.productservice.services.ProductService;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class ProductController {
@@ -27,8 +25,12 @@ public class ProductController {
     public ProductController(@Qualifier("fakestore") ProductService productService) {
         this.productService = productService;
     }
-    @PostMapping("/products")
-    public void createProduct() {
+
+    @PostMapping("/product")
+    public Products createProduct(@RequestBody RequestBodyProductDto request) {
+        return productService.createProduct(request.getTitle(),
+                                                    request.getPrice(),
+                request.getDescription(),request.getImage(),request.getCategory());
 
     }
 
