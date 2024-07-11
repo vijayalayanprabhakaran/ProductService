@@ -1,25 +1,24 @@
 package dev.vijay.productservice.models;
 
-
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.MappedSuperclass;
-import lombok.Data;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Date;
-
+@Entity
 @Getter
 @Setter
-@MappedSuperclass
-public class BaseModel {
+@NoArgsConstructor
+@AllArgsConstructor
+public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    private Date createdAt;
-    private Date updatedAt;
-    private boolean deleted;
+    private Long id ;
+    private String name;
+    private String email;
 
 }

@@ -7,6 +7,8 @@ import dev.vijay.productservice.services.ProductService;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class ProductController {
     /*
@@ -22,7 +24,7 @@ public class ProductController {
      */
     private ProductService productService;
 
-    public ProductController(@Qualifier("fakestore") ProductService productService) {
+    public ProductController(@Qualifier("selfProductService") ProductService productService) {
         this.productService = productService;
     }
 
@@ -42,7 +44,10 @@ public class ProductController {
 
     }
 
-    public void getAllProducts() {
+    @GetMapping("/product")
+    public List<Products> getAllProducts() {
+        return productService.getAllProducts();
+
 
     }
 
